@@ -7,20 +7,22 @@ const ingredients = [
   "Приправы",
 ];
 
-const listOfIngradients = document.querySelector("#ingredients");
+const listOfIngradients = document.querySelector('#ingredients');
 
-const makeElements = (arr) => {
-  const itemArr = arr.map((el) => {
-    const createLi = document.createElement("li");
-    createLi.textContent = el;
+  const createElements = arr =>{
+    const itemArray = arr.map(element => {
+      const elementLi = document.createElement('li');
+      elementLi.textContent = element;
+      
+      return elementLi;
+    });
+    return itemArray;
+  };
 
-    return createLi;
-  });
-  return itemArr;
-};
+  const addItemsInList = (arr, reference, callback) => { reference.append(...callback(arr))};
 
-const addItem = (array, reference, callback) => {
-  reference.append(...callback(array));
-};
+  
 
-makeElements(ingredients, listOfIngradients, makeElements);
+ 
+
+  addItemsInList(ingredients, listOfIngradients, createElements);
