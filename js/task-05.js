@@ -9,7 +9,7 @@ input.addEventListener('input', () => ChangeTextContentOFSpan(input.value))
 
 const ChangeTextContentOFSpan = (newTextContent) => {
    if (newTextContent === "") {
-      span.textContent = "незнакомец"
+     return span.textContent = "незнакомец"
    }
    span.textContent = newTextContent;
 }
